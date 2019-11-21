@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -80,6 +81,7 @@
             <TextField fx:id="tApodo" layoutX="220.0" layoutY="444.0" />
             <TextField fx:id="tPoder" layoutX="390.0" layoutY="444.0" />
             <TextField fx:id="tEdad" layoutX="548.0" layoutY="444.0" />
+            <DatePicker fx:id="datep" layoutX="536.0" layoutY="514.0" />
       </children>
     </AnchorPane>
   </children>

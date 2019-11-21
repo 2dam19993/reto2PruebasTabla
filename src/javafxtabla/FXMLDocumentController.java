@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -53,6 +54,10 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn cPoder;
     @FXML
     private TableColumn cEdad;
+    @FXML
+    private TableColumn cFecha;
+    @FXML
+    private DatePicker datep;
     private Stage stage;
      public void setStage(Stage stage) {
         this.stage = stage;
@@ -61,10 +66,11 @@ public class FXMLDocumentController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("App");
-        cNombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
-        cApodo.setCellValueFactory(new PropertyValueFactory<>("Apodo"));
-        cPoder.setCellValueFactory(new PropertyValueFactory<>("Poder"));
-        cEdad.setCellValueFactory(new PropertyValueFactory<>("Edad"));
+        cNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        cApodo.setCellValueFactory(new PropertyValueFactory<>("apodo"));
+        cPoder.setCellValueFactory(new PropertyValueFactory<>("poder"));
+        cEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
+        cFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         ObservableList<EsperBean> espersData=FXCollections.observableArrayList(new ManagerFalso().getEspers());
         table.setItems(espersData);
        // table.getSelectionModel().selectedItemProperty().addListener(this::handlerEsperSelectionChanged);
@@ -82,7 +88,7 @@ public class FXMLDocumentController implements Initializable {
     */
     @FXML
     public void onActionInsertar(){
-        EsperBean esper=new EsperBean(tNombre.getText().trim(),tApodo.getText().trim(),tPoder.getText().trim(),Integer.parseInt(tEdad.getText().trim()));
+        EsperBean esper=new EsperBean(tNombre.getText().trim(),tApodo.getText().trim(),tPoder.getText().trim(),Integer.parseInt(tEdad.getText().trim()),datep.getValue().toString());
         table.getItems().add(esper);
         tNombre.setText("");
         tApodo.setText("");
@@ -134,7 +140,7 @@ public class FXMLDocumentController implements Initializable {
         EsperBean selectedEsper=((EsperBean)table.getSelectionModel()
                                                         .getSelectedItem());
         
-        EsperBean esper=new EsperBean(tNombre.getText().trim(),tApodo.getText().trim(),tPoder.getText().trim(),Integer.parseInt(tEdad.getText().trim()));
+        EsperBean esper=new EsperBean(tNombre.getText().trim(),tApodo.getText().trim(),tPoder.getText().trim(),Integer.parseInt(tEdad.getText().trim()),datep.getValue().toString());
         selectedEsper.setNombre(tNombre.getText().trim());
         selectedEsper.setApodo(tApodo.getText().trim());
         selectedEsper.setPoder(tPoder.getText().trim());

@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class ManagerFalso {
    public ArrayList<EsperBean> getEspers(){
        ArrayList <EsperBean> espers= new ArrayList <EsperBean>();
-       espers.add(new EsperBean("Ricardo","Red Carmesi Blood","Espada dragonica",19));
-       espers.add(new EsperBean("Emily","Fairy Sounds","Sonido",19));
-       espers.add(new EsperBean("Percy","Eternun oceon","Espada dragonica",19));
-       espers.add(new EsperBean("Nicolas","Ever Winter","Frio",18));
+       espers.add(new EsperBean("Ricardo","Red Carmesi Blood","Espada dragonica",19,"21/11/2019"));
+       espers.add(new EsperBean("Emily","Fairy Sounds","Sonido",19,"21/11/2019"));
+       espers.add(new EsperBean("Percy","Eternun oceon","Espada dragonica",19,"21/11/2019"));
+       espers.add(new EsperBean("Nicolas","Ever Winter","Frio",18,"21/11/2019"));
        return espers;
    } 
 }
